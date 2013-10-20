@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131002115603) do
+ActiveRecord::Schema.define(:version => 20131020041445) do
 
   create_table "availabilities", :force => true do |t|
     t.datetime "starts_at"
@@ -20,6 +20,14 @@ ActiveRecord::Schema.define(:version => 20131002115603) do
     t.integer  "user_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+  end
+
+  create_table "recurs", :force => true do |t|
+    t.datetime "ends_at"
+    t.string   "every"
+    t.integer  "availability_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "slots", :force => true do |t|
